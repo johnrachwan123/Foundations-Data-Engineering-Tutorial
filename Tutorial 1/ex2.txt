@@ -1,0 +1,36 @@
+head -n 4 idx1_shuf.txt | sort
+grep -i 5 * |& cat
+
+> Use a right angle bracket to redirect command output to a file.
+
+< Use a left angle bracket to use the contents of a file as input to the command.
+
+>> Use two right angle brackets to append output from a command to a file.
+
+<() Process Substitution allows the input or output of a command to appear as a file
+
+grep -i 5 * > test.txt 2>&1
+
+join -1 1 -2 1 <(sort idx1_shuf.txt) idx_data1.txt
+
+test -e idx1.txt && echo AND
+test -e idx1.txt || echo AND
+test -e ba || echo AND
+    with ; as well
+
+for i in 1 2 3 4 5
+do
+   echo "Welcome user #$i"
+done
+
+for i in 1 2 3 4 5; do    echo "Welcome user #$i"; done
+
+while [ $i -lt 10 ]
+do
+i=$[$i+1]
+echo $i
+done
+
+if [ $i > 5 ]; then
+echo XD
+fi

@@ -1,0 +1,7 @@
+egrep --color '^([A-F0-9]{2}:){5}([A-F0-9]{2})' random-mac.txt
+
+awk ' { t = $1; $1 = $2; $2 = t; print; } ' random-names.txt > random-names-swaped.txt
+
+sed -E 's/(\w+) (\w+)/\2 \1/g' random-names.txt > random-names-swaped.txt
+
+

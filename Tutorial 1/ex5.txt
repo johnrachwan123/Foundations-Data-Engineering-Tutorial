@@ -1,0 +1,3 @@
+egrep --color '^[a-zA-Z0-9+.-]+@[a-zA-Z0-9+-]+\.[a-zA-Z0-9+.-]+' mails_match.txt
+
+^[\w+.-]+@\w+\..+

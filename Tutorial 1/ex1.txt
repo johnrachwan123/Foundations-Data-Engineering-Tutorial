@@ -1,0 +1,15 @@
+comm: compares two sorted files line by line / comm idx1.txt idx2.txt
+join: join lines of two files on a common field / join -1 1 -2 1 idx1.txt idx_data1.txt
+sort: sort lines of text files by a key/column / sort idx1_shuf.txt
+shuf: shuffles the file / shuf idx1.txt
+head / tail: output the first/last part of files
+uniq: report or ommit (subsequent!) repeated lines
+wc: print newline, word, and byte counts for each file
+seq: print a sequence of numbers
+cat: print file to the terminal
+
+Not in core utils but useful:
+grep: print lines matching a pattern
+awk: pattern scanning and processing language /awk -F " " 'START{sum=0;}{sum=sum+$1}END{print sum}' idx_data1.txt
+sed: stream editor for filtering and transforming text / sed '/[5-9]/! s/[1-9]/F/'  idx3.txt
+less: pager
