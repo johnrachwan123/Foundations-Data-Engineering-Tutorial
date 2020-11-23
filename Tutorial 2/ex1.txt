@@ -1,0 +1,10 @@
+First regarding the ||, it only gets executed if the previous command fails.
+Regarding the question about the pipe, whether it waits for the command to execute or not. We will discuss it in exercice 3.
+
+From : cat, most utils support input files, join supports two input files
+LIMIT: head or tail
+Select: cut, awk (can perform computation on input columns) using the $ sign
+WHERE: grep
+ORDER BY: sort
+GROUP BY: sort + awk, we will see this in the third exercice
+

@@ -1,0 +1,23 @@
+3.1   
+   join -1 3 -2 1 -t '|' <(sort -t '|' -k 3 -n nation.tbl) region.tbl | cut -f 3,6 -d '|' | grep "EUROPE" | cut -f 1 -d '|'
+   
+3.2
+wc -l lineitem.tbl | cut -f 1 -d ' '
+
+3.3
+sort -t '|' -k 2 -n lineitem.tbl | awk -F '|' 'BEGIN{sum=0;curr=1}{if(curr==$2) sum=sum+$5; else{print curr, sum; sum=0;curr=$2}}END{}'
+
+3.4 
+time sort -t '|' -k 2 -n lineitem.tbl | awk -F '|' 'BEGIN{sum=0;curr=1}{if(curr==$2) sum=sum+$5; else{print curr, sum; sum=0;curr=$2}}END{}'
+
+3.5
+time sort -t '|' -k 2 -n lineitem.tbl | awk -F '|' 'BEGIN{sum=0;curr=1}{if(curr==$2) sum=sum+$5; else{print curr, sum; sum=0;curr=$2}}END{}' > /dev/null
+
+3.6
+time sort -t '|' -k 2 -n lineitem.tbl | awk -F '|' 'BEGIN{sum=0;curr=1}{if(curr==$2) sum=sum+$5; else{print curr, sum; sum=0;curr=$2}}END{}' | head
+
+3.7
+Once head has read enough lines from it's stdin (stdout of ls), then it exits and therefore closes the stdin. When that happens, the pipe is considered to be broken and ls receives a SIGPIPE signal.
+As a reaction to that it terminates as well, way before processing everything that it would normally do. In the case of tail, it has to wait for ls to terminate to know which X number of lines were the last ones.
+
+time sort -t '|' -k 2 -n lineitem.tbl | awk -F '|' 'BEGIN{sum=0;curr=1}{if(curr==$2) sum=sum+$5; else{print curr, sum; sum=0;curr=$2}}END{}' | tail

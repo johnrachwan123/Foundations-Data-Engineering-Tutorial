@@ -1,0 +1,13 @@
+2.1
+
+grep '^Lines:' gmane.linux.kernel | egrep -o '[0-9]+' | sort -rn | head -1
+
+or
+
+grep '^Lines:' gmane.linux.kernel| cut -f 2 -d ' ' | sort -rn | head -1
+
+Challenge: cat gmane.linux.kernel | awk '/Archived-At/ {ST=NR} /From MAILER/{print NR-ST-1-2}' | sort -rn | head -1
+
+2.2
+
+grep '^In-Reply-To:' gmane.linux.kernel | cut -f 2 -d ' ' | sort | uniq -c | sort -rn | head -1 | cut -f 6 -d ' ' | grep -E -o '[0-9a-zA-Z\.@-]+'
