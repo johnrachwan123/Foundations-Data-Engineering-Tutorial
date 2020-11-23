@@ -1,0 +1,18 @@
+1. What is the goal of performance optimization?
+Solution:
+• run faster
+• run using less energy
+• use less memory
+2. What are the downsides of manual optimization?
+Solution:
+• Unreadable code
+• Optimization may be to system specific, not portable
+• Danger of optimizing the wrong piece of code
+3. What is a good strategy for optimization?
+Solution: Measure, change, measure!
+4. Which tools are there to support optimization?
+Solution:
+• Profilers: Perf, VTune
+	Profilers generally operate by sampling ("statistical profiling"). Your program is repeatedly interrupted as it runs, with a fixed 		interval between interruptions (e.g. every millisecond). The purpose of each interruption is to take a sample, which is done by 	visiting each running thread, and then examining the stack to discover which functions are running.
+• Tracers: DTrace, STrace, PTrace
+	Tracers do not operate by sampling. Instead, the trace is a log of events within to the program. This log may be detailed enough to 		report function calls and returns, and execution of other statements. Tracing may require the program to be instrumented, i.e. 		modified to include code to log events. This instrumentation may be added to the source code, creating a "instrumented code" as a 		pre-compilation step, or it may be added dynamically to the machine code
