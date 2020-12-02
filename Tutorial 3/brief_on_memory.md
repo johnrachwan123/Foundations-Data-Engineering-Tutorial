@@ -92,8 +92,8 @@ whole page will be loaded into the Page Cache.
 (Assumption: the file hasn't been read yet and isn't present in RAM)
 * Process ask the OS to load X bytes of the file.
 * OS reads the Y pages (where Y contains all X bytes and possibly more, so that the page system preserved)
-* The data are read into the **Page Cache** 
-* The data are **copied** from Page Cache into the process **User Space**
+* The data are all read into the **Page Cache** 
+* The data are all **copied** from Page Cache into the process **User Space**
 * The data are mapped to the **heap** address pool of the process.
 * Process can use the data
 

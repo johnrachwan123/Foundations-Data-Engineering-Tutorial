@@ -55,3 +55,7 @@ all the bits except from the first. By `&` operation and we keep the first set o
 
 `result = highestSetIf0 & lowChar;` // now we "delete" all the false positives (i.e. we discard `1000 1010` because we are only interested in `0000 1010`)
 
+#### 9 BONUS
+
+How would you solve this if you want to match a pattern that is larger than 128?
+
