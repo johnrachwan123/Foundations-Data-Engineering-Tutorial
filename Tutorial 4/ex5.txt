@@ -1,0 +1,3 @@
+WITH sometable (id, description) AS (VALUES (1, 'A'), (2, NULL), (3, 'B'))
+--SELECT COALESCE(description, 'None') FROM sometable;
+SELECT CASE WHEN description IS NOT NULL THEN description ELSE 'None' END FROM sometable;

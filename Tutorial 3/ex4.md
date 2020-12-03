@@ -57,5 +57,5 @@ all the bits except from the first. By `&` operation and we keep the first set o
 
 #### 9 BONUS
 
-How would you solve this if you want to match a pattern that is larger than 128?
+How would you solve this if you want to match any pattern (of any size) ?
 
